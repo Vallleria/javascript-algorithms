@@ -7,8 +7,22 @@
  * 
 */
 
+/*
+    1. Перебираем arr эл-т за эл-том
+       Если число уже встречалось, то мы его пропускаем
+       Иначе добавляем в результирующий массив и добавляем в массив чисел, который содержит числа которые мы встретили
+ */
 function uniq(arr) {
-    // Напишите код здесь
+    const resultNumber = [];
+    const filterNumber = []; // массив с числами, которые уже встретились
+
+    arr.forEach(function (number){
+        if(!filterNumber.includes(number)){
+            resultNumber.push(number);
+            filterNumber.push(number);
+        }
+    })
+    return resultNumber
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
